@@ -18,7 +18,6 @@ export class UsersService {
         const newUser = new this.model(user);
         const password = newUser.password;
         newUser.password = await bcrypt.hash(password, saltOrRounds)
-        console.log({newUser})
         return newUser.save();
     }
 }
